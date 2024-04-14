@@ -70,3 +70,94 @@ fn numeric_operator() {
     let c = a * b;
     println!("{}", c);
 }
+
+#[test]
+fn augmented_assignment() {
+    let mut a = 10;
+    println!("{}", a);
+
+    a += 10;
+    println!("{}", a);
+
+    a -= 10;
+    println!("{}", a);
+}
+
+#[test]
+fn boolean() {
+    let a = true;
+    let b: bool = false;
+    println!("{} {}", a, b)
+}
+
+#[test]
+fn comparison() {
+    let result = 10 >= 20;
+    println!("{}", result);
+}
+
+#[test]
+fn boolean_operator() {
+    let absen = 70;
+    let nilai_akhir = 800;
+
+    let lulus = absen >= 75;
+    let lulus_nilai_akhir = nilai_akhir >= 75;
+
+    let lulus_final = lulus && lulus_nilai_akhir;
+    println!("lulus = {}", lulus_final);
+}
+
+#[test]
+fn char() {
+    let char1: char = 'a';
+    let char2 = 'b';
+    println!("{} {}", char1, char2);
+}
+
+#[test]
+fn tuple() {
+    let data = (10, 10.5, true);
+    println!("{:?}", data);
+
+    let a = data.0;
+    let b = data.1;
+    let c = data.2;
+    println!("{}, {}, {}", a, b, c);
+}
+
+#[test]
+fn destructuring_tuple() {
+    let data = (10, 10.5, true);
+
+    let (a, b, c) = data;
+    println!("{}, {}, {}", a, b, c);
+}
+
+#[test]
+fn mutable_tuple() {
+    let mut data = (10, 10.5, true);
+    println!("{:?}", data);
+
+    let (a, b, c) = data;
+    println!("{}, {}, {}", a, b, c);
+
+    data.0 = 20;
+    data.1 = 20.5;
+    data.2 = false;
+    println!("{:?}", data);
+}
+
+#[test]
+fn unit() {
+    println!("Hello");
+}
+
+#[test]
+fn test_unit() {
+    let result = unit();
+    println!("{:?}", result);
+
+    let test = ();
+    println!("{:?}", test);
+}
