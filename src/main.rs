@@ -1,3 +1,16 @@
+//! This is my awesome crate
+//!
+//! Here goes some other description of what it is and what is does
+//!
+//! # Examples
+//! ```
+//! fn sum2(n1: i32, n2: i32) -> i32 {
+//!   n1 + n2
+//! }
+//! # assert_eq!(4, sum2(2, 2));
+//! ```
+
+use std::char;
 fn main() {
     println!("Hello, world!");
 }
@@ -20,14 +33,6 @@ fn test_mutable() {
     name = "Agisna Revaldo";
     println!("{}", name);
 }
-
-// #[test]
-// fn static_typing() {
-//     let mut name = "agis";
-//     print!("{}", name);
-//     name = 10;
-//     print!("{}", name);
-// }
 
 #[test]
 fn shadowing() {
@@ -160,4 +165,34 @@ fn test_unit() {
 
     let test = ();
     println!("{:?}", test);
+}
+
+#[test]
+fn array() {
+    let array: [i32; 5] = [1, 2, 3, 4, 5];
+    println!("{:?}", array);
+
+    let a = array[0];
+    let b = array[1];
+    println!("{} {}", a, b);
+}
+
+#[test]
+fn mut_array() {
+    let mut array: [char; 3] = ['a', 'b', 'c'];
+    println!("{:#?}", array);
+
+    array[0] = 'x';
+    array[1] = 'y';
+    array[2] = 'z';
+
+    println!("{:?}", array);
+    println!("{:?}", array.len());
+}
+
+const MAX: i32 = 100;
+#[test]
+fn constant() {
+    const MIN: i32 = 0;
+    println!("{} {}", MIN, MAX);
 }
